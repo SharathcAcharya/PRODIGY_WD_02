@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+    .stopwatch {
+      background: radial-gradient(circle, #1a1a1a, #000);
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      position: relative;
+      border: 2px solid #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 30px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    #display {
+      font-size: 36px;
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Digital-7', monospace;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    button {
+      background: linear-gradient(145deg, #333, #222);
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    #laps {
+      max-height: 150px;
+      overflow-y: auto;
+      list-style: none;
+      padding: 0;
+      margin: 20px auto;
+      width: 80%;
+      color: #fff;
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff;
+      }
+      to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stopwatch">
+    <h1>Stopwatch</h1>
+    <div id="display">00:00:00</div>
+    <div class="buttons">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+      <button id="lap">Lap</button>
+    </div>
+    <ul id="laps"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
